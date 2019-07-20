@@ -18,6 +18,15 @@ const surveyReducer = (state = {}, action) => {
     if(action.type === 'FEEL') {
         return action.payload;
     }
+    if(action.type === 'UNDERSTAND') {
+        return {...state, understand: action.payload.understand};
+    }
+    if(action.type === 'SUPPORT') {
+        return {...state, support: action.payload.understand};
+    }
+    if(action.type === 'COMMENT') {
+        return {...state, comment: action.payload.understand};
+    }
     return state;
 }
 

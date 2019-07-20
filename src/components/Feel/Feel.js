@@ -27,7 +27,7 @@ class Feel extends Component {
             <h1>How are you feeling today?</h1>
 
             <form onSubmit={this.handleSubmit}>
-                <input required placeholder="How are you feeling today?" onChange={(event) => this.handleChangeFor(event)} />
+                <input required placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
                 <button type="submit">Next</button>
             </form>
             </>
