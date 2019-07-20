@@ -28,8 +28,8 @@ if (process.env.DATABASE_URL) {
 } else {
     // only change the things on the right side of the ||
     config = {
-        user: process.env.PG_USER || null, //env var: PGUSER
-        password: process.env.DATABASE_SECRET || null, //env var: PGPASSWORD
+        user: process.env.PG_USER || 'postgres', //env var: PGUSER
+        password: process.env.DATABASE_SECRET || 'renovo4ever', //env var: PGPASSWORD
         host: process.env.DATABASE_SERVER || 'localhost', // Server hosting the postgres database
         port: process.env.DATABASE_PORT || 5432, //env var: PGPORT
         database: process.env.DATABASE_NAME || 'prime_feedback', //env var: PGDATABASE or the name of your database (e.g. database: process.env.DATABASE_NAME || 'koala_holla',)
@@ -38,4 +38,15 @@ if (process.env.DATABASE_URL) {
     };
 }
 
-module.exports = new pg.Pool(config);
+const pool = new pg.Pool(config);
+
+pool.on('connect', () => {
+  console.log('Postgesql connected');
+});
+
+pool.on('error', (err) => {
+  console.log('Unexpected error on idle client', err);
+  process.exit(-1);
+});
+
+module.exports = pool;

@@ -4,12 +4,18 @@ import { connect } from 'react-redux';
 
 class Review extends Component {
 
-    checkButton = (store) => {
-        if((store.feel) && (store.understand) && (store.support) && (store.comment)){
-            return <button>Submit</button>
-        }
-        return <button>Incomplete</button>
+    handleSubmit = (event) => {
+        console.log('handle submit');
     }
+    
+    checkButton = (store) => {
+        return <button onClick={this.handleSubmit}>Submit</button>;
+        // if((store.feel) && (store.understand) && (store.support) && (store.comment)){
+        //     return <button onClick={this.handleSubmit}>Submit</button>
+        // }
+        // return <button onClick={() => alert('Please complete the feedback form')}>Incomplete</button>
+    }
+
 
     render() {
         return (
