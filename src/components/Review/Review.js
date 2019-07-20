@@ -3,6 +3,14 @@ import { connect } from 'react-redux';
 
 
 class Review extends Component {
+
+    checkButton = (store) => {
+        if((store.feel) && (store.understand) && (store.support) && (store.comment)){
+            return <button>Submit</button>
+        }
+        return <button>Incomplete</button>
+    }
+
     render() {
         return (
             <>
@@ -11,6 +19,7 @@ class Review extends Component {
             <h3>Understanding: {this.props.reduxStore.surveyReducer.understand}</h3>
             <h3>Support: {this.props.reduxStore.surveyReducer.support}</h3>
             <h3>Comments: {this.props.reduxStore.surveyReducer.comment}</h3>
+            {this.checkButton(this.props.reduxStore.surveyReducer)}
             </>
         );
     }

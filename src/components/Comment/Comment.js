@@ -19,7 +19,7 @@ class Comment extends Component {
             type: 'COMMENT',
             payload: this.state
         })
-        this.props.history.push('/thanks');
+        this.props.history.push('/review');
     }
 
     render() {
