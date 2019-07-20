@@ -8,10 +8,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const testReducer = () => {
-    console.log('in test reducer');
-    return '';
-}
 
 const surveyReducer = (state = {}, action) => {
     console.log('in survey reducer, payload is: ', action.payload)
@@ -27,12 +23,14 @@ const surveyReducer = (state = {}, action) => {
     if(action.type === 'COMMENT') {
         return {...state, comment: action.payload.comment};
     }
+    if(action.type === 'RESET') {
+        return action.payload;
+    }
     return state;
 }
 
 const storeInstance = createStore(
     combineReducers({
-        testReducer,
         surveyReducer
     }),
     applyMiddleware(logger)
