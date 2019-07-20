@@ -5,7 +5,6 @@ import Understand from '../Understand/Understand';
 import Support from '../Support/Support';
 import Comment from '../Comment/Comment';
 import Thanks from '../Thanks/Thanks';
-import Review from '../Review/Review';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 
@@ -26,7 +25,6 @@ class App extends Component {
           <Route path='/support' component={Support} />
           <Route path='/comment' component={Comment} />
           <Route path='/thanks' component={Thanks} />
-          <Review/>
         </main>
       </Router>
     );

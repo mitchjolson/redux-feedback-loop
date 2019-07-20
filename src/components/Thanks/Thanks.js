@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Review from '../Review/Review';
 
 
 class Thanks extends Component {
@@ -8,6 +9,7 @@ class Thanks extends Component {
             <>
             <h1>Thank You!</h1>
             <button>Leave New Feedback</button>
+            <Review/>
             </>
         );
     }

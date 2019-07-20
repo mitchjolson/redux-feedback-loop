@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Review from '../Review/Review';
 
 
 class Understand extends Component {
@@ -30,6 +31,7 @@ class Understand extends Component {
                 <input required placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
                 <button type="submit">Next</button>
             </form>
+            <Review/>
             </>
         );
     }
