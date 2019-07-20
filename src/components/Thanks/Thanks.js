@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-class Support extends Component {
+class Thanks extends Component {
     render() {
         return (
             <>
-            <h1>How well are you being supported?</h1>
-            <button>Next</button>
+            <h1>Thank You!</h1>
+            <button>Leave New Feedback</button>
             </>
         );
     }
@@ -17,4 +17,4 @@ const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapStateToProps)(Support);
+export default connect(mapStateToProps)(Thanks);
