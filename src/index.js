@@ -22,10 +22,10 @@ const surveyReducer = (state = {}, action) => {
         return {...state, understand: action.payload.understand};
     }
     if(action.type === 'SUPPORT') {
-        return {...state, support: action.payload.understand};
+        return {...state, support: action.payload.support};
     }
     if(action.type === 'COMMENT') {
-        return {...state, comment: action.payload.understand};
+        return {...state, comment: action.payload.comment};
     }
     return state;
 }
