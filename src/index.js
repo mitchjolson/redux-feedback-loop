@@ -13,12 +13,23 @@ const testReducer = () => {
     return '';
 }
 
+const surveyReducer = (state = {}, action) => {
+    console.log('in survey reducer, payload is: ', action.payload)
+    if(action.type === 'FEEL') {
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
-        testReducer
+        testReducer,
+        surveyReducer
     }),
     applyMiddleware(logger)
 );
 
+
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
+
 registerServiceWorker();
