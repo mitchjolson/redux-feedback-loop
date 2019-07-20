@@ -7,6 +7,7 @@ import Support from '../Support/Support';
 import Comment from '../Comment/Comment';
 import Thanks from '../Thanks/Thanks';
 import Review from '../Review/Review';
+import Admin from '../Admin/Admin';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 
@@ -31,13 +32,13 @@ class App extends Component {
           <br/>
         </div>
         <main>
-          <button onClick={this.getFeedback}>Get Feedback</button>
           <Route exact path='/' component={Feel} />
           <Route path='/understand' component={Understand} />
           <Route path='/support' component={Support} />
           <Route path='/comment' component={Comment} />
           <Route path='/thanks' component={Thanks} />
           <Route path='/review' component={Review} />
+          <Route path='/admin' component={Admin} />
         </main>
       </Router>
     );

@@ -17,17 +17,17 @@ class Review extends Component {
         Axios.post('/feedback', this.state)
             .then(response => {
                 console.log(response);
+                this.props.history.push('/thanks');
             }).catch(error => {
                 console.log(error);
             })
     }
     
     checkButton = (store) => {
-        return <button onClick={this.handleSubmit}>Submit</button>;
-        // if((store.feel) && (store.understand) && (store.support) && (store.comment)){
-        //     return <button onClick={this.handleSubmit}>Submit</button>
-        // }
-        // return <button onClick={() => alert('Please complete the feedback form')}>Incomplete</button>
+        if((store.feel) && (store.understand) && (store.support) && (store.comment)){
+            return <button onClick={this.handleSubmit}>Submit</button>
+        }
+        return <button onClick={() => alert('Please complete the feedback form')}>Incomplete</button>
     }
 
 
