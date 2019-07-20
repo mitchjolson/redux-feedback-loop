@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Axios from 'axios';
 
 
 class Review extends Component {
 
+    state = {
+        feel: this.props.reduxStore.surveyReducer.feel,
+        understand: this.props.reduxStore.surveyReducer.understand,
+        support: this.props.reduxStore.surveyReducer.support,
+        comment: this.props.reduxStore.surveyReducer.comment,
+    }
+
     handleSubmit = (event) => {
-        console.log('handle submit');
+        console.log('Submitting: ', this.state);
+        Axios.post('/feedback', this.state)
+            .then(response => {
+                console.log(response);
+            }).catch(error => {
+                console.log(error);
+            })
     }
     
     checkButton = (store) => {
