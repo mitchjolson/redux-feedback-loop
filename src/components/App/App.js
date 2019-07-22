@@ -10,7 +10,6 @@ import Review from '../Review/Review';
 import Admin from '../Admin/Admin';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-
 class App extends Component {
 
   getFeedback = () => {

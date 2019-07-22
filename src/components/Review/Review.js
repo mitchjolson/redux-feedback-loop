@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    icon: {
+      margin: theme.spacing.unit,
+      fontSize: 24,
+    },
+  });
 
 class Review extends Component {
 
@@ -25,9 +37,9 @@ class Review extends Component {
     
     checkButton = (store) => {
         if((store.feel) && (store.understand) && (store.support)){
-            return <button onClick={this.handleSubmit}>Submit</button>
+            return <Button variant="contained" color="primary" className={this.props.button} onClick={this.handleSubmit}>Submit</Button>
         }
-        return <button onClick={() => alert('Please complete the feedback form')}>Incomplete</button>
+        return <Button disabled variant="contained" color="secondary" className={this.props.button}>Incomplete</Button>
     }
 
 
@@ -49,4 +61,4 @@ const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapStateToProps)(Review);
+export default withStyles(styles)(connect(mapStateToProps)(Review));

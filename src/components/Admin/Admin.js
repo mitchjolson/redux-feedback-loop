@@ -15,7 +15,7 @@ class Admin extends Component {
   render() {
     return (
       <>
-        <h1>Admin</h1>
+        <h1>Admin (under construction)</h1>
         <button onClick={this.getFeedback}>Get Feedback</button>
         
       </>

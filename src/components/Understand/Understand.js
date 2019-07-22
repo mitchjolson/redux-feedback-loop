@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Review from '../Review/Review';
 
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    icon: {
+      margin: theme.spacing.unit,
+      fontSize: 24,
+    },
+  });
 
 class Understand extends Component {
 
@@ -39,7 +51,7 @@ class Understand extends Component {
                 <input type="radio" name="understand" value="5" onChange={(event) => this.handleChangeFor(event)}/>5
                 <br />
                 <br />
-                <button type="submit">Next</button>
+                <Button type="submit">Next</Button>
             </form>
             <Review/>
             </>
@@ -51,4 +63,4 @@ const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapStateToProps)(Understand);
+export default withStyles(styles)(connect(mapStateToProps)(Understand));

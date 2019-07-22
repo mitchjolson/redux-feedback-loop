@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    icon: {
+      margin: theme.spacing.unit,
+      fontSize: 24,
+    },
+  });
 
 class Thanks extends Component {
 
@@ -16,7 +28,7 @@ class Thanks extends Component {
         return (
             <>
             <h1>Thank You!</h1>
-            <button onClick={this.handleSubmit}>Leave New Feedback</button>
+            <Button onClick={this.handleSubmit}>Leave New Feedback</Button>
             </>
         );
     }
@@ -26,4 +38,4 @@ const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapStateToProps)(Thanks);
+export default withStyles(styles)(connect(mapStateToProps)(Thanks));

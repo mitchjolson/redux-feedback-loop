@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Review from '../Review/Review';
 
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    icon: {
+      margin: theme.spacing.unit,
+      fontSize: 24,
+    },
+  });
 
 class Comment extends Component {
 
@@ -29,7 +41,7 @@ class Comment extends Component {
 
             <form onSubmit={this.handleSubmit}>
                 <input placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
-                <button type="submit">Next</button>
+                <Button type="submit">Next</Button>
             </form>
             <Review/>
             </>
@@ -41,4 +53,4 @@ const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapStateToProps)(Comment);
+export default withStyles(styles)(connect(mapStateToProps)(Comment));
