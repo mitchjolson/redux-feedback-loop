@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import Review from '../Review/Review';
 
 import Button from '@material-ui/core/Button';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -40,16 +44,41 @@ class Support extends Component {
             <>
             <h1>How well are you being supported?</h1>
 
-            <form onSubmit={this.handleSubmit}>
-                <input type="radio" name="support" value="1" onChange={(event) => this.handleChangeFor(event)}/>1
-                <input type="radio" name="support" value="2" onChange={(event) => this.handleChangeFor(event)}/>2
-                <input type="radio" name="support" value="3" onChange={(event) => this.handleChangeFor(event)}/>3
-                <input type="radio" name="support" value="4" onChange={(event) => this.handleChangeFor(event)}/>4
-                <input type="radio" name="support" value="5" onChange={(event) => this.handleChangeFor(event)}/>5
-                <br />
-                <br />
-                <Button variant="contained" color="primary" className={classes.button} type="submit">Next</Button>
-            </form>
+            <FormControl component="fieldset">
+            <RadioGroup aria-label="position" name="position" row onChange={(event) => this.handleChangeFor(event)}>
+                <FormControlLabel
+                value="1"
+                control={<Radio color="primary" />}
+                label="1"
+                labelPlacement="top"
+                />
+                <FormControlLabel
+                value="2"
+                control={<Radio color="primary" />}
+                label="2"
+                labelPlacement="top"
+                />
+                <FormControlLabel
+                value="3"
+                control={<Radio color="primary" />}
+                label="3"
+                labelPlacement="top"
+                />
+                <FormControlLabel
+                value="4"
+                control={<Radio color="primary" />}
+                label="4"
+                labelPlacement="top"
+                />
+                <FormControlLabel
+                value="5"
+                control={<Radio color="primary" />}
+                label="5"
+                labelPlacement="top"
+                />
+            </RadioGroup>
+            <Button fullWidth variant="contained" color="primary" className={classes.button} type="submit" onClick={this.handleSubmit}>Next</Button>
+            </FormControl>
             <Review/>
             </>
         );
