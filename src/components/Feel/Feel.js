@@ -39,6 +39,7 @@ class Feel extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <>
             <h1>How are you feeling today?</h1>
@@ -51,7 +52,7 @@ class Feel extends Component {
                 <input type="radio" name="feel" value="5" onChange={(event) => this.handleChangeFor(event)}/>5
                 <br />
                 <br />
-                <Button type="submit">Next</Button>
+                <Button variant="contained" color="primary" className={classes.button} type="submit">Next</Button>
             </form>
             <Review/>
             </>

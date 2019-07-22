@@ -25,10 +25,11 @@ class Thanks extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <>
             <h1>Thank You!</h1>
-            <Button onClick={this.handleSubmit}>Leave New Feedback</Button>
+            <Button variant="contained" color="primary" className={classes.button} onClick={this.handleSubmit}>Leave New Feedback</Button>
             </>
         );
     }

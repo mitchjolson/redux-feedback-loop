@@ -35,13 +35,14 @@ class Comment extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <>
             <h1>Any comments you would like to leave?</h1>
 
             <form onSubmit={this.handleSubmit}>
                 <input placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
-                <Button type="submit">Next</Button>
+                <Button variant="contained" color="primary" className={classes.button} type="submit">Next</Button>
             </form>
             <Review/>
             </>

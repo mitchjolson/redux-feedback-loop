@@ -39,6 +39,7 @@ class Understand extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <>
             <h1>How well do you understand the material??</h1>
@@ -51,7 +52,7 @@ class Understand extends Component {
                 <input type="radio" name="understand" value="5" onChange={(event) => this.handleChangeFor(event)}/>5
                 <br />
                 <br />
-                <Button type="submit">Next</Button>
+                <Button variant="contained" color="primary" className={classes.button} type="submit">Next</Button>
             </form>
             <Review/>
             </>
