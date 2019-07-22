@@ -15,19 +15,20 @@ const surveyReducer = (state = {}, action) => {
     if(action.type === 'FEEL') {
         return action.payload;
     }
-    if(action.type === 'UNDERSTAND') {
+    else if(action.type === 'UNDERSTAND') {
         return {...state, understand: action.payload.understand};
     }
-    if(action.type === 'SUPPORT') {
+    else if(action.type === 'SUPPORT') {
         return {...state, support: action.payload.support};
     }
-    if(action.type === 'COMMENT') {
+    else if(action.type === 'COMMENT') {
         return {...state, comment: action.payload.comment};
     }
-    if(action.type === 'RESET') {
+    else if(action.type === 'RESET') {
         return action.payload;
+    }else{
+        return state;
     }
-    return state;
 } // end surveyReducer
 
 // create redux store
