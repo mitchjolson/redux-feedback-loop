@@ -4,15 +4,17 @@ import Review from '../Review/Review';
 
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
     button: {
       margin: theme.spacing.unit,
     },
-    icon: {
-      margin: theme.spacing.unit,
-      fontSize: 24,
-    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 400,
+      },
   });
 
 class Comment extends Component {
@@ -41,7 +43,7 @@ class Comment extends Component {
             <h1>Any comments you would like to leave?</h1>
 
             <form onSubmit={this.handleSubmit}>
-                <input placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
+                <TextField label="Comments" className={classes.textField} onChange={(event) => this.handleChangeFor(event)}/>
                 <Button variant="contained" color="primary" className={classes.button} type="submit">Next</Button>
             </form>
             <Review/>

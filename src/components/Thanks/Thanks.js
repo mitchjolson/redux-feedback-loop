@@ -8,10 +8,6 @@ const styles = theme => ({
     button: {
       margin: theme.spacing.unit,
     },
-    icon: {
-      margin: theme.spacing.unit,
-      fontSize: 24,
-    },
   });
 
 class Thanks extends Component {

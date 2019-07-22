@@ -24,3 +24,11 @@ main {
 input[type=radio] {
   margin-left: 15px;
 }
+
+.reviewDiv {
+  margin: auto;
+  margin-top: 50px;
+  width: 60%;
+  border: solid 2px black;
+  padding: 10px;
+}
