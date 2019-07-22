@@ -33,8 +33,8 @@ if (process.env.DATABASE_URL) {
 
         //------------Set these back to null when connecting to DB on laptop------------------\\
 
-        user: process.env.PG_USER || 'postgres', //env var: PGUSER
-        password: process.env.DATABASE_SECRET || 'renovo4ever', //env var: PGPASSWORD
+        user: process.env.PG_USER || null, //env var: PGUSER
+        password: process.env.DATABASE_SECRET || null, //env var: PGPASSWORD
 
 
 
