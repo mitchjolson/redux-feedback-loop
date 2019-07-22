@@ -12,6 +12,8 @@ const styles = theme => ({
 
 class Thanks extends Component {
 
+    // on button click, dispatch an empty object to reducers with type 'RESET'
+    // then navigate to / (feel component)
     handleSubmit = (event) => {
         this.props.dispatch({
             type: 'RESET',
@@ -28,9 +30,10 @@ class Thanks extends Component {
             <Button variant="contained" color="primary" className={classes.button} onClick={this.handleSubmit}>Leave New Feedback</Button>
             </>
         );
-    }
-}
+    } // end render
+} // end class
 
+// connect to redux store
 const mapStateToProps = (reduxStore) => ({
     reduxStore
 })

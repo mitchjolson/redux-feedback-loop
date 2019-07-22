@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+// Not yet complete. This page will get the feedback from the database and append it to a table.
+// Further functionality will allow the admin to delete feedback from the database.
 
 class Admin extends Component {
 
@@ -10,7 +12,7 @@ class Admin extends Component {
     }).catch(err => {
       console.log(err);
     })
-  }
+  } // end getFeedback
 
   render() {
     return (
@@ -20,6 +22,6 @@ class Admin extends Component {
         
       </>
     )}
-}
+} // end render
 
 export default Admin;

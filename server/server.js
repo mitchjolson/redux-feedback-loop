@@ -21,6 +21,7 @@ app.get('/feedback', (req, res) => {
         })
 });
 
+// Post route receives object with values from forms and inserts them into the DB
 app.post('/feedback', (req, res) => {
     console.log(req.body)
     const queryText = 'INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);';

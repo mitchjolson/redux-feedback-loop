@@ -19,12 +19,15 @@ class Feel extends Component {
 
     state = {
         feel: '',
-    };
+    }; 
 
+    // sets the local state when a radio button is clicked
     handleChangeFor = (event) => {
         this.setState({feel: event.target.value})
-    }
+    } // end handleChangeFor
 
+    // on next button click, dispatch local state to reducers with type 'FEEL'
+    // then navigate to /understand
     handleSubmit = (event) => {
         event.preventDefault();
         if(!this.state.feel){
@@ -35,8 +38,8 @@ class Feel extends Component {
             payload: this.state
         })
         this.props.history.push('/understand');
-    }
-    }
+        }
+    } // end handleSubmit
 
     render() {
         const { classes } = this.props;
@@ -83,9 +86,10 @@ class Feel extends Component {
             <Review/>
             </>
         );
-    }
-}
+    } // end render
+} // end class
 
+// connect to redux store
 const mapStateToProps = (reduxStore) => ({
     reduxStore
 })

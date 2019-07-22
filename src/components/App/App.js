@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import Feel from '../Feel/Feel';
 import Understand from '../Understand/Understand';
@@ -12,14 +11,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
 
-  getFeedback = () => {
-    axios.get('/feedback').then(response => {
-      console.log('response data: ', response.data)
-    }).catch(err => {
-      console.log(err);
-    })
-  }
-
+  // Routes are set up for each of the form components, the review, and an admin page.
   render() {
     return (
       <Router>
@@ -42,6 +34,6 @@ class App extends Component {
       </Router>
     );
   }
-}
+} // end render
 
 export default App;

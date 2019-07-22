@@ -21,10 +21,13 @@ class Understand extends Component {
         understand: '',
     };
 
+    // sets the local state when a radio button is clicked
     handleChangeFor = (event) => {
         this.setState({understand: event.target.value})
     }
 
+    // on next button click, dispatch local state to reducers with type 'UNDERSTAND'
+    // then navigate to /support
     handleSubmit = (event) => {
         event.preventDefault();
         if(!this.state.understand){
@@ -82,9 +85,10 @@ class Understand extends Component {
             <Review/>
             </>
         );
-    }
-}
+    } // end render
+} // end class
 
+// connect to redux store
 const mapStateToProps = (reduxStore) => ({
     reduxStore
 })

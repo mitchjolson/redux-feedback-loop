@@ -21,10 +21,13 @@ class Support extends Component {
         support: '',
     };
 
+    // sets the local state when a radio button is clicked
     handleChangeFor = (event) => {
         this.setState({support: event.target.value})
     }
 
+    // on next button click, dispatch local state to reducers with type 'SUPPORT'
+    // then navigate to /comment
     handleSubmit = (event) => {
         event.preventDefault();
         if(!this.state.support){
@@ -82,9 +85,10 @@ class Support extends Component {
             <Review/>
             </>
         );
-    }
-}
+    } // end render
+} // end class
 
+// connect to redux store
 const mapStateToProps = (reduxStore) => ({
     reduxStore
 })

@@ -23,10 +23,13 @@ class Comment extends Component {
         comment: '',
     };
 
+    // sets the local state when text is modified in the comment field
     handleChangeFor = (event) => {
         this.setState({comment: event.target.value})
     }
 
+    // on next button click, dispatch local state to reducers with type 'COMMENT'
+    // then navigate to /review
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.dispatch({
@@ -49,9 +52,10 @@ class Comment extends Component {
             <Review/>
             </>
         );
-    }
-}
+    } // end render
+} // end class
 
+// connect to redux store
 const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
