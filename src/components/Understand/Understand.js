@@ -15,11 +15,15 @@ class Understand extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        if(!this.state.understand){
+            alert('Please select a value before continuing.')
+        }else{
         this.props.dispatch({
             type: 'UNDERSTAND',
             payload: this.state
         })
         this.props.history.push('/support');
+        }
     }
 
     render() {
@@ -28,7 +32,13 @@ class Understand extends Component {
             <h1>How well do you understand the material??</h1>
 
             <form onSubmit={this.handleSubmit}>
-                <input required placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
+                <input type="radio" name="understand" value="1" onChange={(event) => this.handleChangeFor(event)}/>1
+                <input type="radio" name="understand" value="2" onChange={(event) => this.handleChangeFor(event)}/>2
+                <input type="radio" name="understand" value="3" onChange={(event) => this.handleChangeFor(event)}/>3
+                <input type="radio" name="understand" value="4" onChange={(event) => this.handleChangeFor(event)}/>4
+                <input type="radio" name="understand" value="5" onChange={(event) => this.handleChangeFor(event)}/>5
+                <br />
+                <br />
                 <button type="submit">Next</button>
             </form>
             <Review/>

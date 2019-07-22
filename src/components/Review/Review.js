@@ -24,7 +24,7 @@ class Review extends Component {
     }
     
     checkButton = (store) => {
-        if((store.feel) && (store.understand) && (store.support) && (store.comment)){
+        if((store.feel) && (store.understand) && (store.support)){
             return <button onClick={this.handleSubmit}>Submit</button>
         }
         return <button onClick={() => alert('Please complete the feedback form')}>Incomplete</button>

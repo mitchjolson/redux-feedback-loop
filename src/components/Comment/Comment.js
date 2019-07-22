@@ -28,7 +28,7 @@ class Comment extends Component {
             <h1>Any comments you would like to leave?</h1>
 
             <form onSubmit={this.handleSubmit}>
-                <input required placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
+                <input placeholder="answer" onChange={(event) => this.handleChangeFor(event)} />
                 <button type="submit">Next</button>
             </form>
             <Review/>

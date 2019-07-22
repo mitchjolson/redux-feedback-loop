@@ -20,3 +20,7 @@
 main {
   text-align: center;
 }
+
+input[type=radio] {
+  margin-left: 15px;
+}
